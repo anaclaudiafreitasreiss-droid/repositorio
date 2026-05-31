@@ -26,12 +26,13 @@
     transition: transform 150ms;
 }
 
-.btn :hover {
+.btn:hover {
     transform: scale(1.02);
 }
 
 .w-100 {
     width: 100%;
+    align-content: center;
 }
 
 section {
@@ -39,7 +40,7 @@ section {
     flex-direction: column;
     gap: 2rem;
 
-    padding: 2rem 1.5rem;
+    padding: 4rem 2rem;
 }
 
 #section h2 {
@@ -87,27 +88,30 @@ header nav a {
 
 /* home */
 #home {
-    height: 700px;
+    height: 500px;
     padding: 0;
     flex-direction: column;
-    position: center;
+
     
 
 }
 
 .home-cta {
-    position: center;
     display: flex;
     flex-direction: column;
-    gap: 2.5rem;
-    padding-inline: 1.5rem;
+    align-items: left;
+   justify-content: center;
+    gap: 3rem;
+    padding-inline: 3rem;
+    height: 100%;
+
 
     background:
         linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)),
         url('../img/cards/snake.png');
 
     background-repeat: no-repeat;
-    background-size: 300px;
+    background-size:300px;
     background-position: right center;
 } 
 
@@ -117,12 +121,12 @@ header nav a {
         url("../img/cards/snake.png");
 
     background-size: 300px;
-    background-position: rem;
+    background-position: 2rem center;
 
 }
 
 
-.home.heading {
+.home-heading {
     display: flex;
     flex-direction: column;
     gap: 0;
@@ -142,24 +146,36 @@ header nav a {
 /* Sobre */
 
 #sobre {
-    padding: 2rem 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     gap: 1rem;
 
+    padding: 4rem 2rem;
+
     background-color: var(--clr-black);
-    color: var(--clr-white);    
+    color: var(--clr-white);
 
 }
 
+
+#sobre .w-100 {
+    width: auto;
+}
 
 
 #sobre > img {
-    width: 100%;
+    width: 80%;
     max-width: 400px;
     border-radius: 12px;
-    position: center;
 }
 
-
+#sobre .btn {
+    width: auto;
+    padding: 0.6rem 1rem;
+    display: inline-flex;
+}
 .sobre-links {
     display: flex;
     width: 100%;
@@ -169,11 +185,13 @@ header nav a {
 #projetos {
     padding: 2rem 1.5rem;
     gap: 1rem;
+
 }
 
 .cards-container {
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 1rem;
 }
 
@@ -188,19 +206,24 @@ header nav a {
 
 .cards > img {
     width: 100%;
+    height: 180px;
+    object-fit: cover;
     border-radius: 6px;
 }
 
 .cards > h3 {
     font-weight: 500;
     font-weight: 18px;
+    justify-content: center;
 }
 
 #servicos {
     display: flex;
-    flex-direction: column;
-    gap: 4opx;
+    flex-wrap: wrap;
+    gap: 40px;
    background-color: var(--clr-black);
+   justify-content: center;
+   color: var(--clr-white);
 
 
 }
@@ -208,6 +231,8 @@ header nav a {
 .base-list {
     display: flex;
     margin: 0 ;
+    min-width: 220px;
+    text-align: center;
     padding: 0;
 
     list-style: none;
@@ -215,9 +240,9 @@ header nav a {
 
 .servicos-list {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
-    align-items: stretch;
-    gap: 1rem;
+    gap: 3rem;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -235,15 +260,23 @@ header nav a {
 
 .conhecimentos {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 2rem;
 
     margin: 0;
-    padding: 0;
+    padding: 2px;
 
     list-style: none;
 
 
+}
+
+.conhecimentos-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
 }
 
 /* Contato */
@@ -311,5 +344,72 @@ footer a {
 
 footer img {
     height: 24px;
+
+}
+
+
+
+@media (max-width: 768px) {
+
+
+    .home-cta {
+        background-size: 250px;
+        background-position: center bottom;
+
+        padding: 2rem;
+        text-align: center;
+    }
+
+    .home-heading h1 {
+        font-size: 2rem;
+    }
+
+    html,
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+
+
+    #sobre {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #sobre > img {
+        width: 250px;
+    }
+
+    .cards-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cards {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    #servicos {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .servicos-list,
+    .conhecimentos-list {
+        justify-content: center;
+    }
+
+    .conhecimentos-list li {
+        width: 100px;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 
 }
